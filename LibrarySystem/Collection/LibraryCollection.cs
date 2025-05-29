@@ -22,14 +22,14 @@ namespace LibrarySystem.Collection
 
         public LibraryItem FindItemByID (string ID)
         {
-            return itemList.FirstOrDefault(ID => item.Title.Equals(ID, StringComparison.OrdinalIgnoreCase));
+           return itemList.FirstOrDefault(item => item.ID1 == ID);
         }
 
     public void DisplayItems()
         {
             foreach (var item in itemList)
             {
-                Console.WriteLine($"Title: {item.Title}, ID: {item.ID}, Year Published: {item.YearPublished}");
+                Console.WriteLine($"Title: {item.Title}, ID: {item.ID1}, Year Published: {item.YearPublished}");
             }
         }
     }
