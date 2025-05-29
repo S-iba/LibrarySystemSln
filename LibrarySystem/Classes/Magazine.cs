@@ -10,5 +10,27 @@ namespace LibrarySystem.Classes
     {
         private string issueNumber;
         private int monthPublished;
+
+        public string IssueNumber { get => issueNumber; set => issueNumber = value; }
+        public int MonthPublished { get => monthPublished; set => monthPublished = value; }
+
+        public Magazine() : base()
+        {
+            Console.WriteLine("Creating a new magazine item... \n");
+            Console.Write("Enter the issue number of the magazine: ");
+            IssueNumber = Console.ReadLine();
+            Console.Write("Enter the month the magazine was published (1-12): ");
+            MonthPublished = int.Parse(Console.ReadLine());
+        }
+
+        public override void DisplayDetails()
+        {
+            Console.WriteLine($"Title: {Title}");
+            Console.WriteLine($"ID: {ID1}");
+            Console.WriteLine($"Year Published: {YearPublished}");
+            Console.WriteLine($"Issue Number: {IssueNumber}");
+            Console.WriteLine($"Month Published: {MonthPublished}");
+        }
+
     }
 }

@@ -9,26 +9,25 @@ using static System.Console;
 
 namespace LibrarySystem.Classes
 {
-    internal class LibraryItem
+    internal abstract class LibraryItem
     {
-        private string title;
-        private string ID;
-        private int yearPublished;
-
-        public string Title { get => title; set => title = value; }
-        public string ID1 { get => ID; set => ID = value; }
-        public int YearPublished { get => yearPublished; set => yearPublished = value; }
+        public string Title { get; set; }
+        public string ID1 { get; set; }
+        public int YearPublished { get; set; }
 
         public LibraryItem() {
             
             WriteLine("Creating a new library item... \n");
             WriteLine("Please enter the details below: \n");
             Write("Enter the title of the item: ");
-            title = ReadLine();
+            Title = ReadLine();
             Write("\nEnter the ID of the item: ");
-            ID = ReadLine();
+            ID1 = ReadLine();
             Write("\nEnter the year the item was published: ");
-            yearPublished = int.Parse(ReadLine());
+            YearPublished = int.Parse(ReadLine());
         }
+
+        public abstract void DisplayDetails();
+
     }
 }
