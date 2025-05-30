@@ -54,6 +54,15 @@ namespace LibrarySystem
             int choice = 0;
             while (choice != 9)
             {
+                try
+                {
+                    choice = int.Parse(ReadLine());
+                }
+                catch (Exception e)
+                {
+
+                    throw;
+                }
                 switch (choice)
                 {   
                     case 1:
