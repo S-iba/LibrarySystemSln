@@ -36,22 +36,9 @@ namespace LibrarySystem.Collection
         {
             foreach (var item in itemList)
             {
-                Console.WriteLine($"Title: {item.Title}, ID: {item.ID1}, Year Published: {item.YearPublished}");
+                Console.WriteLine($"Title: {item.Title} \nID: {item.ID1} \nYear Published: {item.YearPublished}");
+                item.DisplayDetails();
             }
-        }
-
-        public void DisplayItems(LibraryItem type)
-        {
-            foreach (LibraryItem item in itemList)
-            {
-
-            }
-                
-        }
-
-        public static void ItemMenu()
-        {
-
         }
     }
 }

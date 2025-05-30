@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Console;
 
 namespace LibrarySystem.Classes
 {
@@ -25,7 +26,7 @@ namespace LibrarySystem.Classes
 
         public override void DisplayDetails()
         {
-            wr
+            WriteLine($"Issue Number: {issueNumber} \nMonth: {monthPublished}");
         }
     }
 }
