@@ -60,6 +60,14 @@ namespace LibrarySystem
                         Book book = new Book();
                         shelf.AddItem(book);
                         break;
+                    case 2:
+                        Magazine magazine = new Magazine();
+                        shelf.AddItem(magazine);
+                        break;
+                    case 3:
+                        DVD dvd = new DVD();
+                        shelf.AddItem(dvd);
+                        break;
                     default:
                         break;
                 }
