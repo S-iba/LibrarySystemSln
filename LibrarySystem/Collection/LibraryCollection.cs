@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LibrarySystem.Classes;
 
 namespace LibrarySystem.Collection
 {
@@ -13,6 +14,7 @@ namespace LibrarySystem.Collection
 
         public void AddItem(LibraryItem item)
         {
+
             itemList.Add(item);
         }
         public void RemoveItem(LibraryItem item)
@@ -25,12 +27,29 @@ namespace LibrarySystem.Collection
            return itemList.FirstOrDefault(item => item.ID1 == ID);
         }
 
-    public void DisplayItems()
+        public void DisplayItems()
         {
             foreach (var item in itemList)
             {
                 Console.WriteLine($"Title: {item.Title}, ID: {item.ID1}, Year Published: {item.YearPublished}");
             }
+        }
+
+        public void DisplayItems(LibraryItem type)
+        { 
+            foreach (LibraryItem item in itemList)
+            {
+                if (FindItemByID(type.ID1))
+                {
+
+                }
+            }
+                
+        }
+
+        public static void ItemMenu()
+        {
+
         }
     }
 }

@@ -4,16 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using LibrarySystem.Classes;
+using LibrarySystem.Collection;
 using static System.Console;
 
 
 namespace LibrarySystem.Classes
 {
-    internal abstract class LibraryItem
+    internal class LibraryItem
     {
         public string Title { get; set; }
         public string ID1 { get; set; }
         public int YearPublished { get; set; }
+        LibraryCollection shelf = new LibraryCollection();
 
         public LibraryItem() {
             
@@ -27,7 +29,10 @@ namespace LibrarySystem.Classes
             YearPublished = int.Parse(ReadLine());
         }
 
-        public abstract void DisplayDetails();
+        public virtual void DisplayDetails()
+        {
+            shelf.DisplayItems();
+        }
 
     }
 }
