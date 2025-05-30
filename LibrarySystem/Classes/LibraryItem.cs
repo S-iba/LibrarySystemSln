@@ -10,7 +10,7 @@ using static System.Console;
 
 namespace LibrarySystem.Classes
 {
-    internal class LibraryItem
+    internal abstract class LibraryItem
     {
         public string Title { get; set; }
         public string ID1 { get; set; }
@@ -29,10 +29,8 @@ namespace LibrarySystem.Classes
             YearPublished = int.Parse(ReadLine());
         }
 
-        public virtual void DisplayDetails()
-        {
-            shelf.DisplayItems();
-        }
+        public abstract void DisplayDetails();
+
 
     }
 }

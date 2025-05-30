@@ -25,12 +25,7 @@ namespace LibrarySystem.Classes
 
         public override void DisplayDetails()
         {
-            Console.WriteLine($"Title: {Title}");
-            Console.WriteLine($"ID: {ID1}");
-            Console.WriteLine($"Year Published: {YearPublished}");
-            Console.WriteLine($"Issue Number: {IssueNumber}");
-            Console.WriteLine($"Month Published: {MonthPublished}");
+            wr
         }
-
     }
 }

@@ -20,10 +20,9 @@ namespace LibrarySystem
                 {
                     choice = int.Parse(ReadLine());
                 }
-                catch (Exception e)
+                catch (System.FormatException e)
                 {
-
-                    throw;
+                    WriteLine("Please enter a valid number...");
                 }
                 switch (choice)
                 {   
