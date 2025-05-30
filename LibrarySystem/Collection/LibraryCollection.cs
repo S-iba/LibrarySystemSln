@@ -10,7 +10,12 @@ namespace LibrarySystem.Collection
 {
     internal class LibraryCollection
     {
-        private List<LibraryItem> itemList = new List<LibraryItem>();
+        private List<LibraryItem> itemList;
+
+        public LibraryCollection() {
+        
+            itemList = new List<LibraryItem>();
+        }
 
         public void AddItem(LibraryItem item)
         {
@@ -36,13 +41,10 @@ namespace LibrarySystem.Collection
         }
 
         public void DisplayItems(LibraryItem type)
-        { 
+        {
             foreach (LibraryItem item in itemList)
             {
-                if (FindItemByID(type.ID1))
-                {
 
-                }
             }
                 
         }
