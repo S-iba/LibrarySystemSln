@@ -26,7 +26,8 @@ namespace LibrarySystem.Classes
 
         public override void DisplayDetails()
         {
-            WriteLine($"Issue Number: {issueNumber} \nMonth: {monthPublished}");
+            //writeline specific to Magazine
+            //WriteLine($"Issue Number: {issueNumber} \nMonth: {monthPublished}");
         }
     }
 }

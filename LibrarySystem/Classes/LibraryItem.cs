@@ -29,7 +29,7 @@ namespace LibrarySystem.Classes
             YearPublished = int.Parse(ReadLine());
         }
 
-       
+        public abstract void DisplayDetails();// required writeline for every class
 
 
     }

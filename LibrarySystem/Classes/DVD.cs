@@ -24,9 +24,14 @@ namespace LibrarySystem.Classes
 
 
         }
+
         public override void DisplayDetails()
         {
-
+            Console.WriteLine($"Title: {Title}");
+            Console.WriteLine($"ID: {ID1}");
+            Console.WriteLine($"Year Published: {YearPublished}");
+            Console.WriteLine($"Director: {director}");
+            Console.WriteLine($"Duration: {duration} minutes");
         }
     }
 }
