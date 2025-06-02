@@ -16,17 +16,10 @@ namespace LibrarySystem
             while (choice != 9)
             {
                 Menu();
-                try
-                {
-                    choice = int.Parse(ReadLine());
-                }
-                catch (System.FormatException e)
-                {
-                    WriteLine("Please enter a valid number...");
-                }
+                choice = int.Parse(ReadLine());
+                
                 switch (choice)
                 {   
-                   
                     case 1:
                         shelf.AddItem();
                         break;
@@ -46,7 +39,6 @@ namespace LibrarySystem
                     default:
                         break;
                 }
-
             }
         }
 
@@ -56,13 +48,6 @@ namespace LibrarySystem
             WriteLine("Please Choose below what you would like to do: \n");
             WriteLine("1. Add item \n2. Remove Item \n3. Search Item \n4. Display all Items");
             WriteLine("9. To Quit");
-        }
-
-        public static void AddMenu()
-        {
-            
-
-            
         }
     }
 }
