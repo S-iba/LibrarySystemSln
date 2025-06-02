@@ -27,7 +27,11 @@ namespace LibrarySystem.Classes
         public override void DisplayDetails()
         {
             //writeline specific to Magazine
-            //WriteLine($"Issue Number: {issueNumber} \nMonth: {monthPublished}");
+            Console.WriteLine($"Title: {Title}");
+            Console.WriteLine($"ID: {ID1}");
+            Console.WriteLine($"Year Published: {YearPublished}");
+            Console.WriteLine($"Issue Number: {issueNumber}");
+            Console.WriteLine($"Month published: {monthPublished}");
         }
     }
 }
