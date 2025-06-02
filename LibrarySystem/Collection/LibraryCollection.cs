@@ -17,39 +17,28 @@ namespace LibrarySystem.Collection
             itemList = new List<LibraryItem>();
         }
 
-        public void AddItem(LibraryItem item)
+        public void AddItem(LibraryItem item) 
         {
-
             itemList.Add(item);
+            Console.WriteLine("Item has been successfully added");
         }
-        //removing an Item from the list
-        public void RemoveItem(LibraryItem item)
+        public int SearchById(string Id)
         {
-            itemList.Remove(item);
-            Console.BackgroundColor = ConsoleColor.Red;
-            Console.WriteLine("Item has been successfully removed");
+            Console.WriteLine("Item could not be found...");
+            return -1;
         }
-        //Search by ID method:
-        public LibraryItem FindById(string ID)
-        {
-            foreach (LibraryItem item in itemList) 
-            {
-                if (item.ID1 == ID)
-                {
-                    return item;
-                }
 
-            }
-            return null;
-        }
-        //Display method that uses the object to compensate for thenrest of the details
-        public void DisplayItems()
+        public void Remove(string Id)
         {
-            foreach (var item in itemList)
+            if (SearchById(Id) != -1)
             {
-                Console.WriteLine($"Title: {item.Title} \nID: {item.ID1} \nYear Published: {item.YearPublished}");
-                item.DisplayDetails();
+                itemList.RemoveAt(SearchById(Id));
+            }else
+            {
+                Console.WriteLine("No changes made...");
             }
+            
+
         }
     }
 }

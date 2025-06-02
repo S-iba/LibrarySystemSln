@@ -15,6 +15,7 @@ namespace LibrarySystem.Classes
         public string Title { get; set; }
         public string ID1 { get; set; }
         public int YearPublished { get; set; }
+
         LibraryCollection shelf = new LibraryCollection();
 
         public LibraryItem() {
@@ -30,7 +31,5 @@ namespace LibrarySystem.Classes
         }
 
         public abstract void DisplayDetails();// required writeline for every class
-
-
     }
 }
