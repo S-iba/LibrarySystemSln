@@ -39,6 +39,10 @@ namespace LibrarySystem
                         Write("Please enter the ID you would like to search: ");
                         string search = ReadLine();
                         shelf.SearchById(search);
+                        break;
+                    case 4:
+
+                        break;
                     default:
                         break;
                 }

@@ -69,8 +69,14 @@ namespace LibrarySystem.Collection
             {
                 Console.WriteLine("No changes made...");
             }
-            
+        }
 
+        public void DisplayAll()
+        {
+            foreach (var item in itemList)
+            {
+                item.DisplayDetails();
+            }
         }
     }
 }
