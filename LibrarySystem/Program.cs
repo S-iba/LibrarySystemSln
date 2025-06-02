@@ -41,7 +41,7 @@ namespace LibrarySystem
                         shelf.SearchById(search);
                         break;
                     case 4:
-
+                        shelf.DisplayAll();
                         break;
                     default:
                         break;
