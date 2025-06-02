@@ -20,7 +20,7 @@ namespace LibrarySystem.Classes
 
         public LibraryItem() {
             
-            WriteLine("Creating a new library item... \n");
+            WriteLine($"Creating a new item... \n");
             WriteLine("Please enter the details below: \n");
             Write("Enter the title of the item: ");
             Title = ReadLine();

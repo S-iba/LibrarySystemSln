@@ -17,7 +17,7 @@ namespace LibrarySystem.Classes
 
         public Magazine() : base()
         {
-            Console.WriteLine("Creating a new magazine item... \n");
+            //Console.WriteLine("Creating a new magazine item... \n");
             Console.Write("Enter the issue number of the magazine: ");
             IssueNumber = Console.ReadLine();
             Console.Write("Enter the month the magazine was published (1-12): ");

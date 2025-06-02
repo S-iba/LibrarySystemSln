@@ -16,7 +16,7 @@ namespace LibrarySystem.Classes
 
         public DVD() : base()
         {
-            Console.WriteLine("Creating a new DVD item... \n");
+            //Console.WriteLine("Creating a new DVD item... \n");
             Console.Write("Enter the director of the DVD: ");
             Director = Console.ReadLine();
             Console.Write("Enter the duration of the DVD in minutes: ");

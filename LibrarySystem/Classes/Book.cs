@@ -17,7 +17,7 @@ namespace LibrarySystem.Classes
 
         public Book() : base()
         {
-            Console.WriteLine("Creating a new book item... \n");
+            //Console.WriteLine("Creating a new book item... \n");
             Console.Write("Enter the author of the book: ");
             Author = Console.ReadLine();
             Console.Write("Enter the genre of the book: ");
