@@ -20,20 +20,13 @@ namespace LibrarySystem.Collection
         //Method to add a record - - - - - -
         public void AddItem() 
         {
-            WriteLine("Please enter the type of item you would like to Add: ");
-            WriteLine("1. Book \n2. Magazine \n3. DVD");
+
 
             int choice = 0;
             while (choice != 9)
             {
-                try
-                {
-                    choice = int.Parse(ReadLine());
-                }
-                catch (Exception e)
-                {
-                    throw;
-                }
+                Menu();
+                choice = int.Parse(ReadLine());
                 switch (choice)
                 {
                     case 1:
@@ -78,6 +71,13 @@ namespace LibrarySystem.Collection
             {
                 item.DisplayDetails();
             }
+        }
+
+        //Menu
+        private static void Menu()
+        {
+            WriteLine("Please enter the type of item you would like to Add: ");
+            WriteLine("1. Book \n2. Magazine \n3. DVD");
         }
     }
 }
