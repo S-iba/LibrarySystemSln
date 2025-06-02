@@ -8,10 +8,10 @@ namespace LibrarySystem
 {
     internal class Program
     {
-        LibraryCollection shelf = new LibraryCollection();
+       
         static void Main(string[] args)
         {
-            
+             LibraryCollection shelf = new LibraryCollection();
             int choice = 0;
             while (choice != 9)
             {
@@ -28,7 +28,7 @@ namespace LibrarySystem
                 {   
                    
                     case 1:
-                        //AddMenu();
+                        shelf.AddItem();
                         break;
                     default:
                         break;
@@ -45,41 +45,11 @@ namespace LibrarySystem
             WriteLine("9. To Quit");
         }
 
-        public void AddMenu()
+        public static void AddMenu()
         {
-            WriteLine("Please enter the type of item you would like to Add: ");
-            WriteLine("1. Book \n2. Magazine \n3. DVD");
+            
 
-            int choice = 0;
-            while (choice != 9)
-            {
-                try
-                {
-                    choice = int.Parse(ReadLine());
-                }
-                catch (Exception e)
-                {
-
-                    throw;
-                }
-                switch (choice)
-                {   
-                    case 1:
-                        Book book = new Book();
-                        shelf.AddItem(book);
-                        break;
-                    case 2:
-                        Magazine magazine = new Magazine();
-                        shelf.AddItem(magazine);
-                        break;
-                    case 3:
-                        DVD dvd = new DVD();
-                        shelf.AddItem(dvd);
-                        break;
-                    default:
-                        break;
-                }
-            }
+            
         }
     }
 }

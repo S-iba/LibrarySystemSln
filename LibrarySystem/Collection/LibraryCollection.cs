@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using LibrarySystem.Classes;
+using static System.Console;
 
 namespace LibrarySystem.Collection
 {
@@ -17,9 +18,40 @@ namespace LibrarySystem.Collection
             itemList = new List<LibraryItem>();
         }
 
-        public void AddItem(LibraryItem item) 
+        public void AddItem() 
         {
-            itemList.Add(item);
+            WriteLine("Please enter the type of item you would like to Add: ");
+            WriteLine("1. Book \n2. Magazine \n3. DVD");
+
+            int choice = 0;
+            while (choice != 9)
+            {
+                try
+                {
+                    choice = int.Parse(ReadLine());
+                }
+                catch (Exception e)
+                {
+                    throw;
+                }
+                switch (choice)
+                {
+                    case 1:
+                        Book book = new Book();
+                        itemList.Add(book);
+                        break;
+                    case 2:
+                        Magazine magazine = new Magazine();
+                        itemList.Add(magazine);
+                        break;
+                    case 3:
+                        DVD dvd = new DVD();
+                        itemList.Add(dvd);
+                        break;
+                    default:
+                        break;
+                }
+            }
             Console.WriteLine("Item has been successfully added");
         }
         public int SearchById(string Id)
