@@ -60,7 +60,7 @@ namespace LibrarySystem.Collection
             return -1;
         }
 
-        public void Remove(string Id)
+        public void RemoveItem(string Id)
         {
             if (SearchById(Id) != -1)
             {

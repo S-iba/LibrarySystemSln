@@ -30,6 +30,11 @@ namespace LibrarySystem
                     case 1:
                         shelf.AddItem();
                         break;
+                    case 2:
+                        Write("Please enter the ID you would like to remove: ");
+                        string ID = ReadLine();
+                        shelf.RemoveItem(ID);
+                        break;
                     default:
                         break;
                 }
