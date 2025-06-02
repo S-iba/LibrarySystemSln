@@ -12,12 +12,12 @@ namespace LibrarySystem.Collection
     internal class LibraryCollection
     {
         private List<LibraryItem> itemList;
-
+        // creating an instance of the list >>>>>
         public LibraryCollection() {
         
             itemList = new List<LibraryItem>();
         }
-
+        //Method to add a record - - - - - -
         public void AddItem() 
         {
             WriteLine("Please enter the type of item you would like to Add: ");
@@ -54,12 +54,13 @@ namespace LibrarySystem.Collection
             }
             Console.WriteLine("Item has been successfully added");
         }
+        // Method to search by id ---- also used to in removing...
         public int SearchById(string Id)
         {
             Console.WriteLine("Item could not be found...");
             return -1;
         }
-
+        //Method to remove item by ID
         public void RemoveItem(string Id)
         {
             if (SearchById(Id) != -1)
@@ -70,7 +71,7 @@ namespace LibrarySystem.Collection
                 Console.WriteLine("No changes made...");
             }
         }
-
+        //Display method to be called by the Main method
         public void DisplayAll()
         {
             foreach (var item in itemList)

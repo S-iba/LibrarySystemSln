@@ -11,7 +11,8 @@ namespace LibrarySystem
        
         static void Main(string[] args)
         {
-             LibraryCollection shelf = new LibraryCollection();
+            LibraryCollection shelf = new LibraryCollection();// instance of the collections class
+
             int choice = 0;
             while (choice != 9)
             {
@@ -41,7 +42,7 @@ namespace LibrarySystem
                 }
             }
         }
-
+        // menu template to be re-used
         public static void Menu()
         {
             WriteLine("Welcome to  Virtual library\n");
