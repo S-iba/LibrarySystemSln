@@ -17,6 +17,7 @@ namespace LibrarySystem
             while (choice != 9)
             {
                 Menu();
+                Write("Please enter your choice: ");
                 choice = int.Parse(ReadLine());
                 
                 switch (choice)
