@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using LibrarySystem.Classes;
 using static System.Console;
+using Spectre.Console;
 
 namespace LibrarySystem.Collection
 {
@@ -22,23 +23,23 @@ namespace LibrarySystem.Collection
         {
 
 
-            int choice = 0;
-            while (choice != 9)
+            string choice = string.Empty;
+            while (choice != "Quit")
             {
-                Menu();
-                Write("Please enter your choice: ");
-                choice = int.Parse(ReadLine());
+                choice = Menu();
+                //Write("Please enter your choice: ");
+                //choice = int.Parse(ReadLine());
                 switch (choice)
                 {
-                    case 1:
+                    case "Book":
                         Book book = new Book();
                         itemList.Add(book);
                         break;
-                    case 2:
+                    case "Magazine":
                         Magazine magazine = new Magazine();
                         itemList.Add(magazine);
                         break;
-                    case 3:
+                    case "DVD":
                         DVD dvd = new DVD();
                         itemList.Add(dvd);
                         break;
@@ -75,10 +76,16 @@ namespace LibrarySystem.Collection
         }
 
         //Menu
-        private static void Menu()
+        private static string Menu()
         {
-            WriteLine("Please enter the type of item you would like to Add: ");
-            WriteLine("1. Book \n2. Magazine \n3. DVD");
+            //WriteLine("Please enter the type of item you would like to Add: ");
+            //WriteLine("1. Book \n2. Magazine \n3. DVD");
+            string choice = AnsiConsole.Prompt(
+                new SelectionPrompt<string>()
+                    .Title("[bold blue]Welcome to the Virtual Library[/]")
+                    .PageSize(10)
+                    .AddChoices(new[] { "1. Book", "2. Magazine", "3. DVD", "Quit" }));
+            return choice;
         }
     }
 }
