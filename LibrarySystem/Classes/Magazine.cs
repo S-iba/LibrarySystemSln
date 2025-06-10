@@ -29,18 +29,12 @@ namespace LibrarySystem.Classes
 
         public override void DisplayDetails()
         {
-            //writeline specific to Magazine
-            //Console.WriteLine($"Title: {Title}");
-            //Console.WriteLine($"ID: {ID1}");
-            //Console.WriteLine($"Year Published: {YearPublished}");
-            //Console.WriteLine($"Issue Number: {issueNumber}");
-            //Console.WriteLine($"Month published: {monthPublished}");
-
-            AnsiConsole.WriteLine($"[bold]Title:[/] {Title}");
-            AnsiConsole.WriteLine($"[bold]ID:[/] {ID1}");
-            AnsiConsole.WriteLine($"[bold]Year Published:[/] {YearPublished}");
-            AnsiConsole.WriteLine($"[bold]Issue Number:[/] {IssueNumber}");
-            AnsiConsole.WriteLine($"[bold]Month Published:[/] {MonthPublished}");
+            AnsiConsole.Write(new Markup($"[bold]Magazine Details:[/] \n"));
+            AnsiConsole.Write(new Markup($"[bold]Title:[/] {Title} \n"));
+            AnsiConsole.Write(new Markup($"[bold]ID:[/] {Id} \n"));
+            AnsiConsole.Write(new Markup($"[bold]Year Published:[/] {YearPublished} \n"));
+            AnsiConsole.Write(new Markup($"[bold]Issue Number:[/] {IssueNumber} \n"));
+            AnsiConsole.Write(new Markup($"[bold]Month Published:[/] {MonthPublished} \n"));
         }
     }
 }

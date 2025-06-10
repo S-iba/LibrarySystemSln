@@ -17,11 +17,9 @@ namespace LibrarySystem.Classes
 
         public DVD() : base()
         {
-            //Console.WriteLine("Creating a new DVD item... \n");
-            //Console.Write("Enter the director of the DVD: ");
-            //Director = Console.ReadLine();
-            //Console.Write("Enter the duration of the DVD in minutes: ");
-            //Duration = int.Parse(Console.ReadLine());
+
+            // Using AnsiConsole for better user interaction
+            // Using AnsiConsole for better user input experience
             director = AnsiConsole.Ask<string>("Enter the [green]director[/] of the DVD: ");
             duration = AnsiConsole.Ask<int>("Enter the [green]duration[/] of the DVD in minutes: ");
 
@@ -30,16 +28,12 @@ namespace LibrarySystem.Classes
 
         public override void DisplayDetails()
         {
-            //Console.WriteLine($"Title: {Title}");
-            //Console.WriteLine($"ID: {ID1}");
-            //Console.WriteLine($"Year Published: {YearPublished}");
-            //Console.WriteLine($"Director: {director}");
-            //Console.WriteLine($"Duration: {duration} minutes");
-            AnsiConsole.WriteLine($"[bold]Title:[/] {Title}");
-            AnsiConsole.WriteLine($"[bold]ID:[/] {ID1}");
-            AnsiConsole.WriteLine($"[bold]Year Published:[/] {YearPublished}");
-            AnsiConsole.WriteLine($"[bold]Director:[/] {Director}");
-            AnsiConsole.WriteLine($"[bold]Duration:[/] {Duration} minutes");
+            AnsiConsole.Write(new Markup($"[bold]DVD Details:[/] \n"));
+            AnsiConsole.Write(new Markup($"[bold]Title:[/] \n"));
+            AnsiConsole.Write(new Markup($"[bold]ID:[/] {Id} \n"));
+            AnsiConsole.Write(new Markup($"[bold]Year Published:[/] {YearPublished} \n"));
+            AnsiConsole.Write(new Markup($"[bold]Director:[/] {Director} \n"));
+            AnsiConsole.Write(new Markup($"[bold]Duration:[/] {Duration} minutes \n"));
         }
     }
 }

@@ -24,7 +24,7 @@ namespace LibrarySystem.Collection
 
 
             string choice = string.Empty;
-            while (choice != "Quit")
+            while (choice != "Back")
             {
                 choice = Menu();
                 //Write("Please enter your choice: ");
@@ -47,12 +47,20 @@ namespace LibrarySystem.Collection
                         break;
                 }
             }
-            Console.WriteLine("Item has been successfully added");
+            Console.Write(new Markup("[green]Item has been successfully added"));
         }
         // Method to search by id ---- also used to in removing...
         public int SearchById(string Id)
         {
-            Console.WriteLine("Item could not be found...");
+            for (int i = 0; i < itemList.Count; i++)
+            {
+                if (itemList[i].Id == Id)
+                {
+                    AnsiConsole.Write(new Markup($"[green]Item with ID {Id} has been found.[/]"));
+                    //itemList[i].DisplayDetails();
+                    return i;
+                }
+            }
             return -1;
         }
         //Method to remove item by ID
@@ -60,10 +68,24 @@ namespace LibrarySystem.Collection
         {
             if (SearchById(Id) != -1)
             {
-                itemList.RemoveAt(SearchById(Id));
+                string choice = AnsiConsole.Prompt(
+                    new SelectionPrompt<string>()
+                        .Title($"[bold blue]Are you sure you want to remove the item with ID {Id}?[/]")
+                        .AddChoices(new[] { "Yes", "No" }));
+                if (choice == "No")
+                {
+                    AnsiConsole.Write(new Markup($"[red]Item with ID {Id} will not be removed.[/]"));
+                    return;
+                }
+                else
+                {
+                    AnsiConsole.Write(new Markup($"[green]Item with ID {Id} has been found and will be removed.[/]"));
+                    itemList.RemoveAt(SearchById(Id));
+                }
+                   
             }else
             {
-                Console.WriteLine("No changes made...");
+                AnsiConsole.Write(new Markup($"[red]Item with ID {Id} could not be found.[/]"));
             }
         }
         //Display method to be called by the Main method
@@ -71,6 +93,7 @@ namespace LibrarySystem.Collection
         {
             foreach (var item in itemList)
             {
+                AnsiConsole.WriteLine();
                 item.DisplayDetails();
             }
         }
@@ -84,7 +107,7 @@ namespace LibrarySystem.Collection
                 new SelectionPrompt<string>()
                     .Title("[bold blue]Welcome to the Virtual Library[/]")
                     .PageSize(10)
-                    .AddChoices(new[] { "Book", "Magazine", "DVD", "Quit" }));
+                    .AddChoices(new[] { "Book", "Magazine", "DVD", "Back" }));
             return choice;
         }
     }

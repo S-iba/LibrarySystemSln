@@ -18,28 +18,18 @@ namespace LibrarySystem.Classes
 
         public Book() : base()
         {
-            //Console.WriteLine("Creating a new book item... \n");
-            //Console.Write("Enter the author of the book: ");
-            //Author = Console.ReadLine();
-            //Console.Write("Enter the genre of the book: ");
-            //Genre = Console.ReadLine();
             Author = AnsiConsole.Ask<string>("Enter the [green]author[/] of the book: ");
             Genre = AnsiConsole.Ask<string>("Enter the [green]genre[/] of the book: ");
         }
 
         public override void DisplayDetails()
         {
-            //Console.WriteLine($"Title: {Title}");
-            //Console.WriteLine($"ID: {ID1}");
-            //Console.WriteLine($"Year Published: {YearPublished}");
-            //Console.WriteLine($"Author: {Author}");
-            //Console.WriteLine($"Genre: {Genre}");
-
-            AnsiConsole.WriteLine($"[bold]Title:[/] {Title}");
-            AnsiConsole.WriteLine($"[bold]ID:[/] {ID1}");
-            AnsiConsole.WriteLine($"[bold]Year Published:[/] {YearPublished}");
-            AnsiConsole.WriteLine($"[bold]Author:[/] {Author}");
-            AnsiConsole.WriteLine($"[bold]Genre:[/] {Genre}");
+            AnsiConsole.Write(new Markup($"[bold]Book Details:[/] \n"));
+            AnsiConsole.Write(new Markup($"[bold]Title:[/] {Title} \n"));
+            AnsiConsole.Write(new Markup($"[bold]ID:[/] {Id} \n"));
+            AnsiConsole.Write(new Markup($"[bold]Year Published:[/] {YearPublished} \n"));
+            AnsiConsole.Write(new Markup($"[bold]Author:[/] {Author} \n"));
+            AnsiConsole.Write(new Markup($"[bold]Genre:[/] {Genre} \n"));
         }
     }
 }
