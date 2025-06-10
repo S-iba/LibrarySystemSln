@@ -76,7 +76,7 @@ namespace LibrarySystem.Collection
         }
 
         //Menu
-        private static string Menu()
+        private string Menu()
         {
             //WriteLine("Please enter the type of item you would like to Add: ");
             //WriteLine("1. Book \n2. Magazine \n3. DVD");
@@ -84,7 +84,7 @@ namespace LibrarySystem.Collection
                 new SelectionPrompt<string>()
                     .Title("[bold blue]Welcome to the Virtual Library[/]")
                     .PageSize(10)
-                    .AddChoices(new[] { "1. Book", "2. Magazine", "3. DVD", "Quit" }));
+                    .AddChoices(new[] { "Book", "Magazine", "DVD", "Quit" }));
             return choice;
         }
     }
