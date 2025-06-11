@@ -47,7 +47,7 @@ namespace LibrarySystem.Collection
                         break;
                 }
             }
-            Console.Write(new Markup("[green]Item has been successfully added"));
+            Console.Write(new Markup("[green]Item has been successfully added[/]"));
         }
         // Method to search by id ---- also used to in removing...
         public int SearchById(string Id)
@@ -101,8 +101,6 @@ namespace LibrarySystem.Collection
         //Menu
         private string Menu()
         {
-            //WriteLine("Please enter the type of item you would like to Add: ");
-            //WriteLine("1. Book \n2. Magazine \n3. DVD");
             string choice = AnsiConsole.Prompt(
                 new SelectionPrompt<string>()
                     .Title("[bold blue]Welcome to the Virtual Library[/]")

@@ -20,10 +20,31 @@ namespace LibrarySystem.Classes
 
             // Using AnsiConsole for better user interaction
             // Using AnsiConsole for better user input experience
-            director = AnsiConsole.Ask<string>("Enter the [green]director[/] of the DVD: ");
-            duration = AnsiConsole.Ask<int>("Enter the [green]duration[/] of the DVD in minutes: ");
-
-
+            while (true)
+            {
+                director = AnsiConsole.Ask<string>("Enter the [green]director[/] of the DVD: ");
+                if (string.IsNullOrWhiteSpace(director))
+                {
+                    AnsiConsole.MarkupLine("[red]Director name cannot be empty. Please try again.[/]");
+                    continue;
+                }
+                else break;
+            }
+            while (true) {
+                try
+                {
+                    duration = AnsiConsole.Ask<int>("Enter the [green]duration[/] of the DVD in minutes: ");
+                }
+                catch (System.FormatException e)
+                {
+                    duration = AnsiConsole.Ask<int>("[red]Invalid input. Please enter a valid duration in minutes:[/] ");
+                }
+                if (duration < 22)
+                {
+                    duration = AnsiConsole.Ask<int>("[red]Duration must be at least 22 minutes. Please enter a valid duration:[/] ");
+                }
+                else break;
+            } 
         }
 
         public override void DisplayDetails()

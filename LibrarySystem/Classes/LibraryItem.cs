@@ -20,9 +20,58 @@ namespace LibrarySystem.Classes
 
         public LibraryItem() {
             AnsiConsole.Clear();
-            Title = AnsiConsole.Ask<string>("Enter the [green]title[/] of the item: ");
-            Id = AnsiConsole.Ask<string>("Enter the [green]ID[/] of the item: ");
-            YearPublished = AnsiConsole.Ask<int>("Enter the [green]year published[/] of the item: ");
+            AnsiConsole.Write(new Markup("[bold blue]Library System![/] \n"));
+
+            while (true)
+            {
+                try
+                {
+                    Id = AnsiConsole.Ask<string>("Enter the [green]ID[/] of the item: ");
+                }
+                catch (System.FormatException e)
+                {
+                    Id = AnsiConsole.Ask<string>("[red]Invalid input. Please enter a valid ID:[/] ");
+                }
+                if (string.IsNullOrWhiteSpace(Id))
+                {
+                    Id = AnsiConsole.Ask<string>("[red]ID cannot be empty. Please enter a valid ID:[/] ");
+                }
+                else break;
+            }
+
+            while (true)
+            {
+                try
+                {
+                    Title = AnsiConsole.Ask<string>("Enter the [green]title[/] of the item: ");
+                }
+                catch (System.FormatException e)
+                {
+                    Title = AnsiConsole.Ask<string>("[red]Invalid input. Please enter a valid title:[/] ");
+                }
+                if (string.IsNullOrWhiteSpace(Title))
+                {
+                    Title = AnsiConsole.Ask<string>("[red]Title cannot be empty. Please enter a valid title:[/] ");
+                }
+                else break;
+            }
+            while (true)
+            {
+                try
+                {
+                    YearPublished = AnsiConsole.Ask<int>("Enter the [green]year published[/] of the book: ");
+                }
+                catch (System.FormatException e)
+                {
+                    YearPublished = AnsiConsole.Ask<int>("[red]Invalid input. Please enter a valid year:[/] ");
+                }
+                if (YearPublished < 1450 || YearPublished > DateTime.Now.Year)
+                {
+                    YearPublished = AnsiConsole.Ask<int>("[red]Year must be between 1450 and the current year. Please enter a valid year:[/] ");
+                }
+                else break;
+            }
+
 
 
         }

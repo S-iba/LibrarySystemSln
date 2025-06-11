@@ -18,13 +18,24 @@ namespace LibrarySystem.Classes
 
         public Magazine() : base()
         {
-            //Console.WriteLine("Creating a new magazine item... \n");
-            //Console.Write("Enter the issue number of the magazine: ");
-            //IssueNumber = Console.ReadLine();
-            //Console.Write("Enter the month the magazine was published (1-12): ");
-            //MonthPublished = int.Parse(Console.ReadLine());
-            issueNumber = AnsiConsole.Ask<string>("Enter the [green]issue number[/] of the magazine: ");
-            monthPublished = AnsiConsole.Ask<int>("Enter the [green]month published[/] of the magazine (1-12): ");
+            // Using AnsiConsole for better user interaction
+            while (true)
+            {
+                issueNumber = AnsiConsole.Ask<string>("Enter the [green]issue number[/] of the magazine: ");
+                if (string.IsNullOrWhiteSpace(issueNumber))
+                {
+                    AnsiConsole.MarkupLine("[red]Issue number cannot be empty. Please try again.[/]");
+                    continue;
+                }
+                else break;
+            }
+            monthPublished = AnsiConsole.Prompt<int>(new SelectionPrompt<int>()
+                .Title("[bold blue]Select a month below[/]: ")
+                .PageSize(10)
+                .AddChoices(new[]
+                {
+                    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12
+                })); ;
         }
 
         public override void DisplayDetails()

@@ -18,8 +18,43 @@ namespace LibrarySystem.Classes
 
         public Book() : base()
         {
-            Author = AnsiConsole.Ask<string>("Enter the [green]author[/] of the book: ");
-            Genre = AnsiConsole.Ask<string>("Enter the [green]genre[/] of the book: ");
+            while (true) 
+            {
+                try
+                {
+                    Author = AnsiConsole.Ask<string>("Enter the [green]author[/] of the book: ");
+                }
+                catch (System.FormatException)
+                {
+
+                    Author = AnsiConsole.Ask<string>("[red]Invalid input. Please enter a valid author name:[/] ");
+                }
+                if (string.IsNullOrWhiteSpace(Author))
+                {
+                    Author = AnsiConsole.Ask<string>("[red]Author cannot be empty. Please enter a valid author name:[/] ");
+                }
+                else break;
+
+            }
+            
+            while (true)
+            {
+                try
+                {
+                    Genre = AnsiConsole.Ask<string>("Enter the [green]genre[/] of the book: ");
+                }
+                catch (System.FormatException)
+                {
+
+                    Genre = AnsiConsole.Ask<string>("[red]Invalid input. Please enter a valid genre:[/] ");
+                }
+                if (string.IsNullOrWhiteSpace(Genre))
+                {
+                    Genre = AnsiConsole.Ask<string>("[red]Genre cannot be empty. Please enter a valid genre:[/] ");
+                }
+                else break;
+            }
+            
         }
 
         public override void DisplayDetails()
