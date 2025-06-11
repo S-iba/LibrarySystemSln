@@ -47,14 +47,6 @@ namespace LibrarySystem
         // menu template to be re-used
         public static string Menu()
         {
-            //WriteLine("Welcome to  Virtual library\n");
-            //WriteLine("Please Choose below what you would like to do: \n");
-            //WriteLine("1. Add item \n2. Remove Item \n3. Search Item \n4. Display all Items");
-            //WriteLine("9. To Quit");
-            //AnsiConsole.Ask<string>("[bold blue]Welcome to virtual Library" +
-            //    "\nPlease choose below:[/]" +
-            //    "\n[bold yellow]1. Add item \n2. Remove Item \n3. Search Item \n4. Display all Items" +
-            //    "\n9. To Quit[/]");
             string choice = AnsiConsole.Prompt(
                 new SelectionPrompt<string>()
                     .Title("[bold blue]Welcome to the Virtual Library[/]")
