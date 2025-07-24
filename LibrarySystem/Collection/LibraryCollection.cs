@@ -21,8 +21,6 @@ namespace LibrarySystem.Collection
         //Method to add a record - - - - - -
         public void AddItem() 
         {
-
-
             string choice = string.Empty;
             while (choice != "Back")
             {
